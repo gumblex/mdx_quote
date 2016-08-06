@@ -2,19 +2,19 @@
 
 
 '''
-Cite Extension for Python-Markdown
+Inline Quote Extension for Python-Markdown
 ==================================
 
-Wraps the inline content surrounded by three double quotes into <cite> tags.
+Wraps the inline content surrounded by two single quotes into <q> tags.
 
 Usage
 -----
 
     >>> import markdown
-    >>> src = '"""Who Is Killing the Great Chefs of Europe?""" is the last movie I watched.'
-    >>> html = markdown.markdown(src, ['cite'])
+    >>> src = "The man said ''Things that are impossible just take longer''. I disagreed with him."
+    >>> html = markdown.markdown(src, ['quote'])
     >>> print(html)
-    <p><cite>Who Is Killing the Great Chefs of Europe?</cite> is the last movie I watched.</p>
+    <p>The man said <q>Things that are impossible just take longer</q>. I disagreed with him.</p>
 
 Dependencies
 ------------
@@ -26,6 +26,7 @@ Copyright
 ---------
 
 2011, 2012 [The active archives contributors](http://activearchives.org/)
+2016 Dingyuan Wang
 All rights reserved.
 
 This software is released under the modified BSD License. 
@@ -37,19 +38,19 @@ import markdown
 from markdown.inlinepatterns import SimpleTagPattern
 
 
-CITE_RE = r'(\"{3})(.+?)\2'
+Q_RE = r"(\'{2})(.+?)\2"
 
 
-class CiteExtension(markdown.extensions.Extension):
-    """Adds cite extension to Markdown class"""
+class InlineQuoteExtension(markdown.extensions.Extension):
+    """Adds inline quote extension to Markdown class"""
 
     def extendMarkdown(self, md, md_globals):
         """Modifies inline patterns"""
-        md.inlinePatterns.add('cite', SimpleTagPattern(CITE_RE, 'cite'), '<not_strong')
+        md.inlinePatterns.add('q', SimpleTagPattern(Q_RE, 'q'), '<not_strong')
 
 
 def makeExtension(configs={}):
-    return CiteExtension(configs=dict(configs))
+    return InlineQuoteExtension(configs=dict(configs))
 
 
 if __name__ == "__main__":

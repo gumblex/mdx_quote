@@ -1,22 +1,22 @@
-Cite Extension for Python-Markdown
+Inline Quote Extension for Python-Markdown
 ==================================
 
-Wraps the inline content surrounded by three double quotes into `cite` tags.
+Wraps the inline content surrounded by two single quotes into `q` tags.
 
 
 Installation
 ------------
 
-    pip install git+git://github.com/aleray/mdx_cite.git
+    pip install git+git://github.com/gumblex/mdx_quote.git
 
 Usage
 -----
 
     >>> import markdown
-    >>> src = '"""Who Is Killing the Great Chefs of Europe?""" is the last movie I watched.'
-    >>> html = markdown.markdown(src, ['cite'])
+    >>> src = "The man said ''Things that are impossible just take longer''. I disagreed with him."
+    >>> html = markdown.markdown(src, ['quote'])
     >>> print(html)
-    <p><cite>Who Is Killing the Great Chefs of Europe?</cite> is the last movie I watched.</p>
+    <p>The man said <q>Things that are impossible just take longer</q>. I disagreed with him.</p>
 
 Dependencies
 ------------
@@ -28,6 +28,7 @@ Copyright
 ---------
 
 2011, 2012 [The active archives contributors](http://activearchives.org/)
+2016 Dingyuan Wang
 All rights reserved.
 
 This software is released under the modified BSD License. 

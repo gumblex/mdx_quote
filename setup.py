@@ -5,13 +5,11 @@ from setuptools import setup
 
 
 setup(
-    name='mdx_cite',
+    name='mdx_quote',
     version='1.0',
-    author='Alexandre Leray',
-    author_email='alexandre@stdin.fr',
-    description='Python-Markdown extension to support the <cite> tag.',
-    url='http://activearchives.org/',
-    py_modules=['mdx_cite'],
+    author='Dingyuan Wang',
+    description='Python-Markdown extension to support the <q> tag.',
+    py_modules=['mdx_quote'],
     install_requires=['Markdown>=2.0',],
     classifiers=[
         'Development Status :: 4 - Beta',

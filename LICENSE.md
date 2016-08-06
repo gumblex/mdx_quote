@@ -1,5 +1,6 @@
 - Copyright 2011, 2012 The Active Archives contributors
 - Copyright 2011, 2012 Alexandre Leray
+- Copyright 2016 Dingyuan Wang
 
 All rights reserved.
 
